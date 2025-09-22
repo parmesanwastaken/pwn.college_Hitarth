@@ -31,9 +31,9 @@ hacker@hello~command-history:~$ the flag is pwn.college{I796mOCJ_KmGkddgSld1Xlnr
 ```
 
 ## What I learned
-In first challenge I learn how to write command
-In second challenge I learn how to write arguments with commands
-In third challenge I learn how to go through history of commands
+In first challenge I learn how to write command  
+In second challenge I learn how to write arguments with commands  
+In third challenge I learn how to go through history of commands  
 
 ## References 
 Reference was just instructions written in document, no videos were referred.
