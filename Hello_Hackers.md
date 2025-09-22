@@ -1,5 +1,7 @@
-# Challenge Name
-Hello Hackers
+# Hello Hackers
+Challenge 1: Invoke first command
+Challenge 2: Command with arguments
+Challenge 3: Check command history
 
 
 ## My solve
