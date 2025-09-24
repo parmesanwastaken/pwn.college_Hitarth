@@ -252,19 +252,20 @@ Only text mentioned in challenge
 ---
 
 # linking files
-type what the challenge asks
+I was asked to use symlinking to execute a file
 
 ## My solve
-**Flag:** `pwn.college{helloworld}`
-
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-pwn.college{helloworld}
-```
+**Flag:** `pwn.college{I-hu1XbXI1cMUqTKIlju747KdIu.QX5ETN1wSO2EzNzEzW}`
+- I removed `not-the-flag` using `rm`
+- Then I linked `/flag` using `ln -s /flag not-the-flag`
+- Then I ran `./catflag`
+- This gave me the flag
 
 ## What I learned
-explain what you learned
+- I learnt how to use symlink
+- I also learnt difference between soft and hardlink
 
 ## References 
-Add any references or videos u used while solving the challenge.
+- I referred given video
+- I referred text in challenge
+- I also referred basic linux wiki command to understand more about linking file systems
