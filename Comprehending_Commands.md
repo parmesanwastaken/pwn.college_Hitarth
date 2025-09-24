@@ -231,22 +231,23 @@ Just text in challenge
 ---
 
 # finding files
-type what the challenge asks
+The challenge asks me to find all the files in directory, then find flag file and find flag inside it
 
 ## My solve
-**Flag:** `pwn.college{helloworld}`
+**Flag:** `pwn.college{Up6F8g4F_OkiHEFlS7CEp8KS8en.QXyMDO0wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-pwn.college{helloworld}
-```
+- First I ran `find / -name flag`
+- Then it gave output and I pressed `ctrl +c` because it was taking too much time
+- I got a file and used cat to read it
+- This gave me the flag
 
 ## What I learned
-explain what you learned
+- I learned to find files inside a directory
+- How to find all files in /
+- How to use -name to specify file name
 
 ## References 
-Add any references or videos u used while solving the challenge.
+Only text mentioned in challenge
 
 ---
 
