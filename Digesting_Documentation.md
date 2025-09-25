@@ -121,19 +121,16 @@ I referred description in challenge
 ---
 
 # Help for Builtins
-type what the challenge asks
+Challenge asks me to use help command with an argument to directly get usage of its flags
 
 ## My solve
-**Flag:** `pwn.college{helloworld}`
+**Flag:** `pwn.college{od6D-DBpbDljLG4X0Kify81BQBn.QX0ETO0wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-pwn.college{helloworld}
-```
+- I used `help challenge`
+- Thr output told me info about `--secret` flag and the value I need to input `od6D-DBp`
 
 ## What I learned
-explain what you learned
+- I learnt how to use help command directly to view info about flags
 
 ## References 
-Add any references or videos u used while solving the challenge.
+Referred text in challenge
