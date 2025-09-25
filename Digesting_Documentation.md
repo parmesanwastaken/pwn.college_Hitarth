@@ -80,37 +80,43 @@ Challenge asks me to man challenge command and thus find flag inside it
 ---
 
 # Searching For Manuals
-type what the challenge asks
+The challenge asks me to man the man page and find hidden flag through which I can find changed man page of challenge and then find flag through it
 
 ## My solve
-**Flag:** `pwn.college{helloworld}`
+**Flag:** `pwn.college{MhHauyPKRGsvKFAeYjKMn1X1B4Y.QX2EDO0wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-pwn.college{helloworld}
-```
+- First I did `man man`
+- Then I looked through it thoroughly and found `-k` flag, which I used with challenge argument
+- Thus I found `hauysvejnw` and used man with it
+- It told me to use flag `--hauysv` with /challenge/challengeand enter number 114 to find flag
 
 ## What I learned
-explain what you learned
+- I learnt how to properly read man pages
+- I also learnt about -k which helps you find manuals
+- This was also helpful to recap usage of arguments with flags
 
 ## References 
-Add any references or videos u used while solving the challenge.
+- Referred description in challenge and read `man man`
 
 ---
 
 # Helpful Programs
-
+The challenge asked me to make use of `--help`
 
 ## My solve
-**Flag:** ``
+**Flag:** `pwn.college{Qe6uD3mhDxfpFBeoTORvmKonyzN.QX3IDO0wSO2EzNzEzW}`
 
+- Usually /challenge/challenge is used for flag
+- So I used `/challenge/challenge -h`
+- This gave me description for `-p` and `-g`
+- I got the number 633 from `-p` and then entered it as argument with `-g`
+- This gave me the flag
 
 ## What I learned
-explain what you learned
+- I learnt how to use `--help` or `-h` when man page is not available
 
 ## References 
-Add any references or videos u used while solving the challenge.
+I referred description in challenge
 
 ---
 
