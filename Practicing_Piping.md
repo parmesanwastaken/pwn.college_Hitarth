@@ -1,16 +1,17 @@
 # Redirecting output
-type what the challenge asks
+The challenge asks me to write the word `PWN` in `COLLEGE` using `>` operator
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{UlXaXQh_lXbEqEGjhXdqHqYtTH3.QX0YTN0wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I connected dojo using SSH
+- I used `echo` for this
+- I typed `echo PWN > COLLEGE`
+- This appended the word `PWN` in `COLLEGE`
 
 ## What I learned
-explain what you learned
+- I learnt how to add stdout in a file
+- I learnt I can use `>` to directly add output in any file I want
 
 ## References 
 Referred text given in challenge
@@ -18,18 +19,17 @@ Referred text given in challenge
 ---
 
 # Redirecting more output
-type what the challenge asks
+The challenge asks me to append `stdout` of `/challenge/run` in `myflag`
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{wtKxdHH5Xvo7EctFDkbrXJDv32V.QX1YTN0wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I typed `/challenge/run > myflag`
+- The terminal displayed success
+- Thus I used cat to read  `myflag` and got the flag
 
 ## What I learned
-explain what you learned
+- I revised how to again append output of a command into another file
 
 ## References 
 Referred text given in challenge
@@ -37,18 +37,18 @@ Referred text given in challenge
 ---
 
 # Appending output
-type what the challenge asks
+Challenge asks me to use `>>` instead of `>` to append first and second half both in same file
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{IQXWeuyjkiaB4CkJJhuCrXWd0Nn.QX3ATO0wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I wrote `/challenge/run >> /home/hacker/the-flag`
+- This wrote both first and second half in `the-flag`
+- Then I used cat to get the flag
 
 ## What I learned
-explain what you learned
+- I learnt how to use `>>` to append multiple `stdout` in same file
+- This helped me to avoid truncation, which would've happened if I used `>`
 
 ## References 
 Referred text given in challenge
@@ -56,18 +56,17 @@ Referred text given in challenge
 ---
 
 # Redirecting errors
-type what the challenge asks
+The challenge asks to redirect output and errors in two different files
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{IulIO4G9gZUaqhqB2SocimqKpwj.QX3YTN0wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I wrote `/challenge/run 1> myflag 2> instructions`
+- This redirected output to myflag and error to instructions
 
 ## What I learned
-explain what you learned
+- I learnt how to seperate `stdout` and `stderr` and redirect them to seperate files
+- I also learnt how I can use `1>` specifically for `stdout` and `2>` for `stderr`
 
 ## References 
 Referred text given in challenge
@@ -75,18 +74,20 @@ Referred text given in challenge
 ---
 
 # Redirecting input
-type what the challenge asks
+The challenge asks me to first add value `COLLEGE` to file `PWN`. Then input `PWN` file to `/challenge/run`
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{E7xkVTVJGdwOU-GW3MYtfd3kv1s.QXwcTN0wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
 ```bash
-example triple ticks for bash
+hacker@piping~redirecting-input:~$ echo COLLEGE > PWN
+hacker@piping~redirecting-input:~$ /challenge/run < PWN
 ```
+This gave me the flag
 
 ## What I learned
-explain what you learned
+- I revised how to redirect again
+- I also learnt how to input from a file
 
 ## References 
 Referred text given in challenge
@@ -94,18 +95,18 @@ Referred text given in challenge
 ---
 
 # Grepping stored results
-type what the challenge asks
+Challenge asks to redirect output, then use grep to get the flag from output
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{kRUzYCen_6Xu3WPtbIwvMj_UFy3.QX4EDO0wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I wrote `/challenge/run > /tmp/data.txt `
+- This gave me a success
+- So I used grep as `grep pwn.college /tmp/data.txt`
+- This gave me the flag
 
 ## What I learned
-explain what you learned
+- I revised grep and redirection of `stdout`
 
 ## References 
 Referred text given in challenge
@@ -113,18 +114,17 @@ Referred text given in challenge
 ---
 
 # Grepping live output
-type what the challenge asks
+Challenge asks me to use grep on a live output
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{AD_gTkVBQiLBsRB3-NJ-3de3s-u.QX5EDO0wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I wrote `/challenge/run | grep pwn.college`
+- This checked for flag in output, and gave me the string with flag
 
 ## What I learned
-explain what you learned
+- I learnt how to use `|` (pipe)
+- I also learnt how to use any command on live output (especially grep)
 
 ## References 
 Referred text given in challenge
@@ -132,18 +132,18 @@ Referred text given in challenge
 ---
 
 # Grepping errors
-type what the challenge asks
+The challenge asks me to grep from live errors. This can't be done directly, so I am asked to redirect errors to output and pipe to use grep 
 
 ## My solve
-**Flag:** 
-
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+**Flag:** `pwn.college{YGuQ2kMBRCjLMLqjujhc3IWeUyU.QX1ATO0wSO2EzNzEzW}`
+- I wrote ` /challenge/run 2>&1 | grep pwn.college`
+- This first redirected `stderr` to `stdout`
+- Then `|` made this output to input for grep
+- This gave me the flag
 
 ## What I learned
-explain what you learned
+- I learnt how to use use `&` to convert `stderr` to `stdout`
+- I also learnt that `|` only works for output and not errors, so we have to convert everything to use it properly
 
 ## References 
 Referred text given in challenge
@@ -151,18 +151,16 @@ Referred text given in challenge
 ---
 
 # Filtering with grep -v
-type what the challenge asks
+The challenge asks me to use `grep` with flag `-v` to exlude particular characters, and output only strings without those characters
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{4dSs7klYa-XcNTiSKo09ZDXasQw.0FOxEzNxwSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I wrote `/challenge/run | grep -v DECOY`
+- This grepped live output, and `-v` flag omitted results which had `DECOY` in the string.
 
 ## What I learned
-explain what you learned
+- I learnt the usage of `-v` with grep and how to omit strings using it
 
 ## References 
 Referred text given in challenge
@@ -170,18 +168,34 @@ Referred text given in challenge
 ---
 
 # Duplicating piped data with tee
-type what the challenge asks
+
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{E_6Qn_5VCHiq-lZBe0DEzSEua4E.QXxITO0wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
 ```bash
-example triple ticks for bash
+hacker@piping~duplicating-piped-data-with-tee:~$ /challenge/pwn | /challenge/college
+Processing...
+^C
+hacker@piping~duplicating-piped-data-with-tee:~$ /challenge/pwn |tee test.txt| /challenge/college
+Processing...
+The input to 'college' does not contain the correct secret code! This code
+should be provided by the 'pwn' command. HINT: use 'tee' to intercept the
+output of 'pwn' and figure out what the code needs to be.
+hacker@piping~duplicating-piped-data-with-tee:~$ cat test.txt
+Usage: /challenge/pwn --secret [SECRET_ARG]
+
+SECRET_ARG should be "E_6Qn_5V"
+hacker@piping~duplicating-piped-data-with-tee:~$ /challenge/pwn --secret E_6Qn_5V | /challenge/college
+Processing...
+Correct! Passing secret value to /challenge/college...
+Great job! Here is your flag:
+pwn.college{E_6Qn_5VCHiq-lZBe0DEzSEua4E.QXxITO0wSO2EzNzEzW}
 ```
 
 ## What I learned
-explain what you learned
+- I learnt how to use `tee` to get multiple redirections
+- This makes debugging much simpler, especially when error is due to first command in piped inputs.
 
 ## References 
 Referred text given in challenge
@@ -189,18 +203,20 @@ Referred text given in challenge
 ---
 
 # Process substitution for input
-type what the challenge asks
+Challenge asks me to compare output of two files
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{kE6lzcVFm-RpTvE5ELzDc0c2gY-.0lNwMDOxwSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
 ```bash
-example triple ticks for bash
+hacker@piping~process-substitution-for-input:~$ diff <(/challenge/print_decoys) <(/challenge/print_decoys_and_flag)
+34a35
+> pwn.college{kE6lzcVFm-RpTvE5ELzDc0c2gY-.0lNwMDOxwSO2EzNzEzW}
 ```
 
 ## What I learned
-explain what you learned
+- I learnt that Linux follows the philosophy that "everything is a file"
+- Thus we can create temp files while using commands
 
 ## References 
 Referred text given in challenge
