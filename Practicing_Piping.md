@@ -224,37 +224,43 @@ Referred text given in challenge
 ---
 
 # Writing to multiple programs
-type what the challenge asks
+Challenge asks me to output a command and use that as input in other 2 commands
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{IGQFRvpP5j1Avx3F9z7vh2DPlD-.QXwgDN1wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
 ```bash
-example triple ticks for bash
+hacker@piping~writing-to-multiple-programs:~$ /challenge/hack | tee >(/challenge/the) |  /challenge/planet
+Congratulations, you have duplicated data into the input of two programs! Here
+is your flag:
 ```
 
 ## What I learned
-explain what you learned
+- I learnt how to use output as multiple inputes for different commands
+- More use cases of `tee`
+- Also how to use >(command) properly
 
 ## References 
-Referred text given in challenge
+- Referred text given in challenge
+- Also referred to [Unix Shell Redirection Guide](https://web.archive.org/web/20220629044814/http://bencane.com:80/2012/04/16/unix-shell-the-art-of-io-redirection/)
 
 ---
 
 # Split-piping stderr and stdout
-type what the challenge asks
+Challenge asks me to:
+`
+    /challenge/hack: this produces data on stdout and stderr
+    /challenge/the: you must redirect hack's stderr to this program
+    /challenge/planet: you must redirect hack's stdout to this program
+`
 
 ## My solve
-**Flag:** 
-
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+**Flag:** `pwn.college{kGc4NsMLtsKvi2cao-AwJcKwQIs.QXxQDM2wSO2EzNzEzW}`
+- I entered `/challenge/hack > >(/challenge/planet) 2> >(/challenge/the)`
+- This redicted output to `/challenge/planet` and error to `/challenge/the`
 
 ## What I learned
-explain what you learned
+- I learnt how to combine everything and set output of a command then seperate `stdout` and `stderr` and use them as input for commands
 
 ## References 
 Referred text given in challenge
@@ -262,18 +268,20 @@ Referred text given in challenge
 ---
 
 # Named pipes
-type what the challenge asks
+I am asked to create `/tmp/flag_fifo` FIFO and input output from `/challenge/run` 
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{ULgH7bqbaYEQXPXcibLRwreYyve.01MzMDOxwSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I wrote `mkfifo /tmp/flag_fifo`
+- Then I typed `/challenge/run > /tmp/flag_fifo`
+- I opened a new terminal
+- Reconnected SSH
+- Then cat'd flag_fifo
 
 ## What I learned
-explain what you learned
+- FIFO stands for First in, First out
+- Advantages of FIFO over normal files
 
 ## References 
 Referred text given in challenge
