@@ -108,18 +108,17 @@ Referred text given in challenge
 ---
 
 # Resuming Processes
-type what the challenge asks
+I was asked to run `/challenge/run` then pause it and then resume it again
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{4V8gWA9pc1tw1axK6r9ihBJDWam.QX2QDO0wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I first ran `/challenge/run`
+- Then pressed 'ctrl + z`, this caused it to pause and go to background
+- Then I resumed it using `fg` command
 
 ## What I learned
-explain what you learned
+- I learnt how to use `fg` command
 
 ## References 
 Referred text given in challenge
@@ -127,18 +126,18 @@ Referred text given in challenge
 ---
 
 # Backgrounding Processes
-type what the challenge asks
+The challenge asks me to send a process in background and invoke flag by rerunning that process while the first one is in background
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{MJcM1_WR6XJcA79QvPWeFw44Cb-.QX3QDO0wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I wrote `/challenge/run`
+- Then I suspended it using `ctrl +z`
+- I sent it to background using `bg`
+- Then I reran the absolute path. This gave me the flag
 
 ## What I learned
-explain what you learned
+- I learnt how to use `bg` to send programs to background.
 
 ## References 
 Referred text given in challenge
@@ -146,18 +145,18 @@ Referred text given in challenge
 ---
 
 # Foregrounding Processes
-type what the challenge asks
+The challenge asks me to suspend a process them send to background and then bring it back to foreground
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{UkGd_00YGea-ySx6k75dA0ZK4xQ.QX4QDO0wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I wrote `/challenge/run`
+- Then I suspended it using `ctrl +z`
+- I sent it to background using `bg`
+- Then I wrote `fg`, this send it to foreground and gave me the flag
 
 ## What I learned
-explain what you learned
+- I learnt how to send background process to foreground process
 
 ## References 
 Referred text given in challenge
@@ -165,18 +164,15 @@ Referred text given in challenge
 ---
 
 # Starting Backgrounded Processes
-type what the challenge asks
+I was asked to run a program directly in background
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{kq7EYQpVW09N1JL92WBQ93xGDQu.QX5QDO0wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I just ran `/challenge/run &`
 
 ## What I learned
-explain what you learned
+- I learnt how to directly run a program in background and then continue with your terminal
 
 ## References 
 Referred text given in challenge
@@ -184,18 +180,18 @@ Referred text given in challenge
 ---
 
 # Process Exit Codes
-type what the challenge asks
+Challenge asked me to get exit code of a program and use that as argument for another program
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{82EKC_49OyBx0gxui_Fht9m1Lq-.QX5YDO1wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I first ran `/challenge/get-code`
+- Then I got its exit code using `echo $?`
+- Then I ran `/challenge/submit-code 128`
+
 
 ## What I learned
-explain what you learned
+- I learnt how to get exit codes
 
 ## References 
 Referred text given in challenge
