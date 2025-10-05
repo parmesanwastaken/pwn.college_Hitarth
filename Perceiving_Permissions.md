@@ -93,18 +93,23 @@ Referred text given in challenge
 ---
 
 # Permission Tweaking Practice
-
+I was asked to change perms as instructed on terminal
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{Msb1msRxhX8NlVNEXesaKE0r591.QXwEjN0wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I kept changing perms are instructed
+- `chmod u-r,o-r /challenge/pwn`
+- `chmod u+rx,g+x /challenge/pwn`
+- `chmod g-x /challenge/pwn`
+- `chmod o+rw /challenge/pwn`
+- `chmod u-rw,o-rw /challenge/pwn`
+- `chmod o+wx /challenge/pwn`
+- `chmod g+x /challenge/pwn`
+- `chmod u+r /challenge/pwn`
 
 ## What I learned
-explain what you learned
+- Good practice for `chmod`
 
 ## References 
 Referred text given in challenge
@@ -112,18 +117,23 @@ Referred text given in challenge
 ---
 
 # Permissions Setting Practice
-type what the challenge asks
+Asked to do more practice with `chmod` using `=` and `,`
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{cjg8VNWr71YEJUkZIRUhph91hht.QXzETO0wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I set perms as instructed:
+- `chmod u=r,g=wx /challenge/pwn`
+- `chmod u=wx,g=wx,o=wx /challenge/pwn`
+- `chmod u=wx,g=rw,o=wx /challenge/pwn`
+- `chmod u=rwx,g=r,o=wx /challenge/pwn`
+- `chmod u=-,g=rx,o=rx /challenge/pwn`
+- `chmod u=rwx,g=r,o=x /challenge/pwn`
+- `chmod u=-,g=rx,o=rx /challenge/pwn`
+- `chmod u=x,g=rwx,o=x /challenge/pwn`
 
 ## What I learned
-explain what you learned
+- I got more practice on `chmod`
 
 ## References 
 Referred text given in challenge
@@ -131,18 +141,24 @@ Referred text given in challenge
 ---
 
 # The SUID Bit
-type what the challenge asks
+I was asked to add SUID to user executable perm
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{U7hSM5Q3d4wlnlRi9Np8ERVn4I0.QXzEjN0wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
 ```bash
-example triple ticks for bash
+hacker@permissions~the-suid-bit:~$ ls -l /challenge/getroot
+-rwxr-xr-x 1 root root 155 Jan 14  2025 /challenge/getroot
+hacker@permissions~the-suid-bit:~$ chmod u+s /challenge/getroot
+hacker@permissions~the-suid-bit:~$ /challenge/getroot
+SUCCESS! You have set the suid bit on this program, and it is running as root!
+Here is your shell...
+root@permissions~the-suid-bit:~# cat /flag
 ```
 
 ## What I learned
-explain what you learned
+- I learnt about SUID
+- I also learnt I can use `u+s` with `chmod` to set SUID
 
 ## References 
 Referred text given in challenge
