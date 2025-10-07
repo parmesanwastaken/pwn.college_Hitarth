@@ -1,16 +1,14 @@
 # Launching Screen
-type what the challenge asks
+Challenge asks me to write `screen`
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{UM9a7JQH35-qZBaHWmzlTi7J26L.0VN4IDOxwSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I typed `screen`
+- This gave me the flag
 
 ## What I learned
-explain what you learned
+- I learnt how to create virtual terminal using `screen`
 
 ## References 
 Referred text given in challenge
@@ -18,18 +16,18 @@ Referred text given in challenge
 ---
 
 # Detaching and Attaching
-type what the challenge asks
+I was asked to first connect to the virtual terminal, then detach myself and atatch myself
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{0Dw3zhs86b2VUr15Tpius3Y6ciL.0lN4IDOxwSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I wrote `screen`
+- Then I pressed `ctrl + d` followed by `a`
+- Then I ran `/challenge/run`, and finally wrote `screen -r`
+- This gave me the flag and I reattatched myself to the terminal
 
 ## What I learned
-explain what you learned
+- I learnt how to deattatch and reattatch myself to virtual terminal using `screen`
 
 ## References 
 Referred text given in challenge
