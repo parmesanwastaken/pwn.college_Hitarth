@@ -145,18 +145,22 @@ Referred text given in challenge
 ---
 
 # Scripting with Arguments
-type what the challenge asks
+I am asked to creaete a script such that when I input 2 arguments, then it outputs them in reverse order
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{gBVuGZJV5I9RaSi3md0rXtkW_tv.0VNzMDOxwSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+- First I used `nano solve.sh`
+- Then added following text to the script:
 ```bash
-example triple ticks for bash
+#!/bin/bash
+
+echo "$2 $1"
 ```
+- Thus it first gave output for second input and vica versa for first input
 
 ## What I learned
-explain what you learned
+- I learnt that I can use `$` followed by number of argument in a script as a placeholder for argument in input.
 
 ## References 
 Referred text given in challenge
@@ -164,18 +168,26 @@ Referred text given in challenge
 ---
 
 # Scripting with Conditionals
-type what the challenge asks
+I am asked to create a script that outputs `college` when the user inputs `pwn` as argument
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{M4uAxLlCLInVb63U_hlMDAkuAgM.0lNzMDOxwSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+- I used `nano solve.sh`
+- And typed the following:
 ```bash
-example triple ticks for bash
+#!/bin/bash
+
+if [ "$1" == "pwn" ]
+then
+        echo "college"
+fi
 ```
+- This gives output `college` everytime the user inputs argument `pwn`
 
 ## What I learned
-explain what you learned
+- I learnt proper syntax of `if` statements in shell scripts
+- I also learnt usage of  `then` and `fi`
 
 ## References 
 Referred text given in challenge
@@ -183,18 +195,26 @@ Referred text given in challenge
 ---
 
 # Scripting with Default Cases
-type what the challenge asks
+The challenge asks me to create a similar script as above challenge, but this time add a `else` statement too
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{4WHhTIjqnlDn5n-hgut1Il7uiZF.01NzMDOxwSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+- I ran `nano solve.sh`, and entered the following:
 ```bash
-example triple ticks for bash
+#!/bin/bash
+
+if [ "$1" == "pwn" ]
+then
+        echo "college"
+else
+        echo "nope"
+fi
 ```
+- This makes use of `else`, `if`, `then` and `fi`
 
 ## What I learned
-explain what you learned
+- I learnt how to use `else` and `if` statements together in a shell script
 
 ## References 
 Referred text given in challenge
@@ -202,18 +222,32 @@ Referred text given in challenge
 ---
 
 # Scripting with Multiple Conditions
-type what the challenge asks
+I am asked to create a shell script that makes use of `if`, `elif` and `else`
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{w2bo6Rwmhq5BeZFvNIZ6U_3AWX4.0FOzMDOxwSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+- I ran `nano solve.sh`, and typed:
 ```bash
-example triple ticks for bash
+#!/bin/bash
+
+if [ "$1" == "pwn" ]
+then
+        echo "college"
+elif [ "$1" == "hack" ]
+then
+        echo "the planet"
+elif [ "$1" == "learn" ]
+then
+        echo "linux"
+else
+        echo "unknown"
+fi
 ```
+- This makes use of everything as asked in the challenge
 
 ## What I learned
-explain what you learned
+- I learnt how to make use of `if`, `elif` and `else` together
 
 ## References 
 Referred text given in challenge
@@ -221,18 +255,33 @@ Referred text given in challenge
 ---
 
 # Reading Shell Scripts
-type what the challenge asks
+I am asked to read a shell script and thus figure out the flag
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{Ms9HPChP_SjIKoAtd8Vk15PgvYM.0lMwgDOxwSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+- First I used `cat /challenge/run`
+- The script first read the variable from user input, then it checked if input was same as given in script, if true then it gives the flag
+- So I echoed the input with pipe in it
 ```bash
-example triple ticks for bash
+hacker@chaining~reading-shell-scripts:~$ cat /challenge/run
+#!/opt/pwn.college/bash
+
+read GUESS
+if [ "$GUESS" == "hack the PLANET" ]
+then
+        echo "CORRECT! Your flag:"
+        cat /flag
+else
+        echo "Read the /challenge/run file to figure out the correct password!"
+fi
+hacker@chaining~reading-shell-scripts:~$ echo "hack the PLANET" | /challenge/run
+CORRECT! Your flag:
 ```
 
 ## What I learned
-explain what you learned
+- This was a bit challenging at first, but after revising  `read`, I was able to figure out the solution
+- I also learnt how to read a shell script
 
 ## References 
 Referred text given in challenge
