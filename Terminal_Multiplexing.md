@@ -35,18 +35,18 @@ Referred text given in challenge
 ---
 
 # Finding Sessions
-type what the challenge asks
+The challenge asks me to go through various screen sessions and find the flag
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{k5af6S30bQ5AXDCriGaL3k3fIN8.01N4IDOxwSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- First found running sessions using `screen -ls`
+- Then used `screen -r 147.session_a7563376053fa45a`
+- This gave me the flag
 
 ## What I learned
-explain what you learned
+- I learnt to check all running sessions using `screen -ls`
+- Also learnt how to run a particular session using `screen -r`
 
 ## References 
 Referred text given in challenge
@@ -54,18 +54,19 @@ Referred text given in challenge
 ---
 
 # Switching Windows
-type what the challenge asks
+I was asked to switch window from 1 to 0 using `ctrl + a`
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{sap_1RizS_Tg8Xw1HzuX-pBhbi0.0FO4IDOxwSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I typed `screeen -ls` to get all sessions
+- Then went to deattatched session using `screen -r 135.challenge_session`
+- Then simple changed to window 0 using `ctrl + a` then pressed `0`
 
 ## What I learned
-explain what you learned
+- I learnt how to change windows using `ctrl + a` followed by a number from `0-9`
+- We can even scroll using `ctrl + a` followed by `p` and `n` for previous and next
+- `ctrl + a` followed by `"` brings up the selection menu
 
 ## References 
 Referred text given in challenge
@@ -73,18 +74,18 @@ Referred text given in challenge
 ---
 
 # Detaching and Attaching (tmux)
-type what the challenge asks
+I was asked to use tmux to detach and reattach `tmux`
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{088Nv5BCBWDrJjhsWNU_1ZZoVUA.0VO4IDOxwSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I ran `tmux`
+- Then pressed `ctrl + b` followed by `d` to detach it
+- Ran `/challenge/run`
+- Reattatched using `tmux a`
 
 ## What I learned
-explain what you learned
+- I learn basics of `tmux`
 
 ## References 
 Referred text given in challenge
@@ -92,18 +93,17 @@ Referred text given in challenge
 ---
 
 # Switching Windows (tmux)
-type what the challenge asks
+I was asked to switch to window 0 to get the flag
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{UWUqut7X950PWPQMN2PrQ87znhR.0FM5IDOxwSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I used `tmux`
+- Then ran `ctrl + b` followed by `w`
+- Then switched to window 0 and got the flag
 
 ## What I learned
-explain what you learned
+- I learnt how to switch windows on tmux
 
 ## References 
 Referred text given in challenge
