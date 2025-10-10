@@ -1,16 +1,14 @@
 # Bashrc Backdoor
-type what the challenge asks
+I am asked to edit user's `.bashrc` to cat flag
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{Qz844m3FCyLcD7VHtyC_bOxvHEp.0VMzEzNxwSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I used `nano /home/zardus/.bashrc` and added command `cat /flag`
+- Nkw when I initiated the user, it ran this and gave me the flag
 
 ## What I learned
-explain what you learned
+- I learnt about `.bashrc` and its uses 
 
 ## References 
 Referred text given in challenge
