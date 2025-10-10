@@ -55,37 +55,39 @@ Referred text given in challenge
 ---
 
 # Adding Commands
-type what the challenge asks
+I was asked to create a shell script named `win`, this should cat the flag. Then I was asked to add the directory to PATH, so I can invoke it anywhere.
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{kWluERyzUC55cL9ruP_euynrNKT.QX2cjM1wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I first wrote `nano win` and added a she bang at top, with command `cat /flag` below it
+- Gave it execution perms using `chmod +x win`
+- Then added it to PATH without overwriting using `export PATH:"$PATH:/home/hacker"`
+- Then used `/challenge/run` to get the flag
 
 ## What I learned
-explain what you learned
+- Revision for permission and shell scripts
+- Learnt how to set a PATH on top of existing PATH, without overwriting it
 
 ## References 
-Referred text given in challenge
+Referred text given in challenge and a linux manual to learn basics of `export` syntax, which I used for setting PATH without overwriting existing one
 
 ---
 
 # Hijacking Commands
-type what the challenge asks
+I was asked to figure out how to find flag, even though it is getting removed
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{g8nMfkyVF7pI0NPTuRAHpZjLsAg.QX3cjM1wSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I created a file using `nano rm`, added command `cat /flag` in it
+- Then gave perms using `chmod +x rm`
+- Now added it to PATH while keeping old PATH, but giving this PATH more priority using `export PATH="/home/hacker:$PATH"`
+- Thus I executed `/challenge/run` and got the flag
 
 ## What I learned
-explain what you learned
+- I revised the whole thing
+- I also learnt how to add a higher priority PATH
 
 ## References 
-Referred text given in challenge
+Referred text given in challenge and a linux manual to learn basics of `export` syntax, which I used for setting PATH without overwriting existing one
