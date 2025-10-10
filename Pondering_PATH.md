@@ -36,18 +36,18 @@ Referred text given in challenge
 ---
 
 # Finding Commands
-type what the challenge asks
+I was asked to use `which ` to find path of `win` command
 
 ## My solve
-**Flag:** 
+**Flag:** `pwn.college{g338SqPcTU4oSgBqNaTsgNunkzH.01NzEzNxwSO2EzNzEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
-```bash
-example triple ticks for bash
-```
+- I used `which win`
+- Then found the path and used `ls` on it
+- This showed me the path to flag
+- Then I catted it
 
 ## What I learned
-explain what you learned
+- I learnt hoe to find exact locations of path commands using `which`
 
 ## References 
 Referred text given in challenge
