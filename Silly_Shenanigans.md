@@ -5,7 +5,7 @@ I am asked to edit user's `.bashrc` to cat flag
 **Flag:** `pwn.college{Qz844m3FCyLcD7VHtyC_bOxvHEp.0VMzEzNxwSO2EzNzEzW}`
 
 - I used `nano /home/zardus/.bashrc` and added command `cat /flag`
-- Nkw when I initiated the user, it ran this and gave me the flag
+- Now when I initiated the user, it ran this and gave me the flag
 
 ## What I learned
 - I learnt about `.bashrc` and its uses 
